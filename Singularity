@@ -7,15 +7,13 @@ From: ubuntu:latest
 
 
 %post
-echo 'export DEBIAN_FRONTEND=noninteractive' >>$SINGULARITY_ENVIRONMENT
-apt-get update && apt-get -y install \
+apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install \
   wget \
   build-essential \
   zlib1g-dev \
   pkg-config \
   libfreetype6-dev \
   libpng-dev \
-  tzdata \
   python-setuptools \
   python-matplotlib
 
