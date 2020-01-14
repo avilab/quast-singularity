@@ -12,6 +12,7 @@ apt-get update && apt-get -y install \
   pkg-config \
   libfreetype6-dev \
   libpng-dev \
+  python-setuptools \
   python-matplotlib
 
 wget https://downloads.sourceforge.net/project/quast/quast-5.0.2.tar.gz \
