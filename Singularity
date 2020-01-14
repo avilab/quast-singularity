@@ -4,7 +4,10 @@ From: ubuntu:latest
 %labels
   Maintainer tpall
 
+
+
 %post
+echo 'export DEBIAN_FRONTEND=noninteractive' >>$SINGULARITY_ENVIRONMENT
 apt-get update && apt-get -y install \
   wget \
   build-essential \
@@ -12,6 +15,7 @@ apt-get update && apt-get -y install \
   pkg-config \
   libfreetype6-dev \
   libpng-dev \
+  tzdata \
   python-setuptools \
   python-matplotlib
 
