@@ -1,13 +1,12 @@
 Bootstrap: docker
-From: ubuntu:latest
+From: ubuntu:18.04
 
 %labels
   Maintainer tpall
 
-
-
 %post
-apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install \
+apt-get update && DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata \
+  && apt-get -y install \
   wget \
   build-essential \
   zlib1g-dev \
