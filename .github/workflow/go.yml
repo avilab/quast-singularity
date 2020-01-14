@@ -46,7 +46,7 @@ jobs:
     - name: Build Container
       env:
         SINGULARITY_RECIPE: Singularity
-        OUTPUT_CONTAINER: container.sif
+        OUTPUT_CONTAINER: quast-singularity.sif
       run: |
        ls 
        if [ -f "${SINGULARITY_RECIPE}" ]; then
@@ -56,3 +56,7 @@ jobs:
            echo "Present working directory: $PWD"
            ls
        fi
+
+    - name: Test Container
+      run: |
+        singularity exec quast-singularity.sif metaquast contigs.fa
