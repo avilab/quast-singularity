@@ -25,7 +25,8 @@ apt-get clean \
   && rm -rf /var/lib/apt/lists/ 
 
 cd / \
-  && rm -rf quast-5.0.2
+  && rm -rf quast-5.0.2 \
+  && rm quast-5.0.2.tar.gz
 
 %environment
   export PATH=/usr/local/bin:$PATH
